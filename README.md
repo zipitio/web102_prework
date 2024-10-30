@@ -24,7 +24,6 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
-https://www.loom.com/share/50c15edafdf84499bba18c7c380c9712?sid=17e47f0f-5d3f-4ea4-8ab8-c05f7f811b03
 
 <img src="https://cdn.loom.com/sessions/thumbnails/50c15edafdf84499bba18c7c380c9712-b16a619b2dcf5348-full-play.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
