@@ -241,3 +241,32 @@ runnerUpDiv.innerHTML = `
 <p>${name2}</p>
 `
 secondGameContainer.appendChild(runnerUpDiv);
+
+// BONUS: SEARCH FOR A SPECIFIC GAME
+
+const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-in");
+//console.log(searchInput.value);
+
+// show specific game
+function filterByName() {
+    deleteChildElements(gamesContainer);
+
+    // use filter() to get a list of games that include searched string
+    let specificGame = GAMES_JSON.filter ( (game) => {
+        return game.name.toLowerCase().includes(searchInput.value);
+    });
+    //console.log(unfundedGames);
+    // use the function we previously created to add the unfunded games to the DOM
+    addGamesToPage(specificGame);
+}
+
+// add event listeners with the correct functions to each button
+//ex.document.getElementById("myBtn").addEventListener("click", displayDate);
+//element.addEventListener(event, function, useCapture);
+searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter"){
+        filterByName();
+    }
+});
+searchBtn.addEventListener("click", filterByName);

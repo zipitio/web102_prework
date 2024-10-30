@@ -18,6 +18,21 @@ body {
     margin-right: -10px;
     margin-top: -10px;
 }
+a.header-link {
+    padding: 1px 6px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+    font-family: 'Cabin';
+    border: none;
+    padding: 1%;
+    border-radius: 7px;
+    margin-left: auto;
+}
+
+a.header-link:hover{
+    cursor: pointer;
+}
 
 .stats-container {
     display: flex;
@@ -36,6 +51,14 @@ body {
     margin: 1%;
     width: 100%;
     text-align: center;
+}
+
+.search {
+    background-color: #a8b0bc;
+    border-radius: 7px;
+    padding: 1%;
+    margin: 1px;
+    width: 200px;
 }
 
 #num-contributions, #total-raised, #num-games {
@@ -79,3 +102,16 @@ button {
     margin: 1%;
     border-radius: 7px;
 }
+
+button:hover {
+    cursor: pointer;
+}
+
+.search-container {
+    
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border: none;
+  }

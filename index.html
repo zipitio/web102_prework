@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -11,6 +12,7 @@
     <div class="header">
         <img id="tentacles" src="assets/tentacles.png">
         <h1 class="header-text">Sea Monster Crowdfunding</h1>
+        <a href="#games-anchor" class="header-link">Go to Games!</a>
     </div>
 
     <!-- background info about company -->
@@ -48,8 +50,13 @@
     </div>
 
     <!-- list of games funded by Sea Monster -->
-    <h2>Our Games</h2>
+    <h2 id="games-anchor">Our Games</h2>
     <p>Check out each of our games below!</p>
+    <div class="search-container">
+        Search for a game: <input id="search-in" class="search" type="text" placeholder="Search.." name="search">
+        <button id = "search-btn" type="submit"><i class="fa fa-search"></i></button>
+      </div>
+
     <div id="button-container">
         <button id="unfunded-btn">Show Unfunded Only</button>
         <button id="funded-btn">Show Funded Only</button>
