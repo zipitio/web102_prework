@@ -103,7 +103,7 @@ raisedCard.innerHTML = `
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
 
-const numGames = GAMES_JSON.reduce ( (acc, game) => {
+const numGames = GAMES_JSON.reduce ( (acc) => {
     return acc + 1
 }, 0);
 
@@ -129,7 +129,7 @@ function filterUnfundedOnly() {
     let unfundedGames = GAMES_JSON.filter ( (game) => {
         return game.pledged < game.goal
     });
-    console.log(unfundedGames);
+    //console.log(unfundedGames);
     // use the function we previously created to add the unfunded games to the DOM
     addGamesToPage(unfundedGames);
 }
@@ -142,7 +142,7 @@ function filterFundedOnly() {
     let fundedGames = GAMES_JSON.filter ( (game) => {
         return game.pledged >= game.goal
     });
-    console.log(`Funded Games ${fundedGames}`);
+    //console.log(`Funded Games ${fundedGames}`);
     // use the function we previously created to add unfunded games to the DOM
     addGamesToPage(fundedGames);
 }
@@ -178,12 +178,30 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
+// let totalUnfunded = GAMES_JSON.filter ( game => 
+//     game.pledged < game.goal
+// ).length;
 
+let totalUnfunded = GAMES_JSON.reduce( (acc, game) => {
+    return game.pledged < game.goal ? acc + 1 : acc;
+}, 0);
+
+//console.log(totalUnfunded)
 
 // create a string that explains the number of unfunded games using the ternary operator
-
+const displayStr = `Currently ${totalUnfunded} ${totalUnfunded != 1 ? "games" : "game" } are unfunded. 
+${totalUnfunded > 0 ? "Please help us fund these amazing games!" : "We did it!"}
+`;
+//console.log(displayStr);
 
 // create a new DOM element containing the template string and append it to the description container
+let strDiv = document.createElement("p");
+strDiv.innerHTML = `
+${displayStr}
+`;
+
+descriptionContainer.appendChild(strDiv);
+
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
